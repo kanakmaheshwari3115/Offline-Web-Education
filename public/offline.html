@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="icon" href="/img/suriname-logo.png" sizes="any" />
+    <link rel="apple-touch-icon" href="/img/suriname-logo.png" sizes="180x180" />
+    <link rel="mask-icon" href="/img/suriname-logo.png" color="#FFFFFF" />
+
+    <title> EduWeb Offline Education Web </title>
+    <meta
+      name="description"
+      content="A cutting-edge Progressive Web App (PWA) for delivering offline-first education. Empowering underserved communities through service workers, IndexedDB, and AI-powered personalized content. Syncs data intelligently in low/no connectivity regions and works seamlessly across devices. Built for real community impact."
+    />
+    <meta property="og:title" content="EduWeb Offline Education Web " />
+    <meta property="og:description" content="Offline-first education PWA that empowers learning in low-connectivity areas." />
+    <meta property="og:image" content="/img/suriname-logo.png" />
+    <meta property="og:type" content="website" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <style>
+      body.homepage-bg {
+        background-image: url('/img/suriname-bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .contact-section {
+        color: #111;
+        background: #fff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 2rem auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .contact-section h2 {
+        color: #FF00FF;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-section p {
+        color: #222;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <div style="text-align:center; padding:1rem; background-color: #ffeb3b; color:#000;">
+        This application requires JavaScript to function properly.
+      </div>
+    </noscript>
+
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <div id="root"></div>
+
+    <!-- ✨ Contact Us Text Block - Brighter Styling -->
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Want to work with us?<br />Complete this form and we will get back to you in 24 hours.</p>
+    </div>
+
+    <script>
+      const path = window.location.pathname.toLowerCase();
+      const isContactPage = path.includes("contact");
+      const isHomepage = path === "/" || path === "/index.html";
+    
+      if (isHomepage && !isContactPage) {
+        document.body.classList.add("homepage-bg");
+      } else {
+        document.body.classList.remove("homepage-bg");
+      }
+    </script>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
