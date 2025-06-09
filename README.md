@@ -1,4 +1,4 @@
-#  EduWeb Offline Education Web
+#  EduWeb - Offline Education Web
 
 ## Overview
 
@@ -37,25 +37,15 @@
 1. Install the dependencies:
   ```bash
   npm install
+```
 2. Start the development server:
   ```bash
   npm run dev
+```
 3. Build the project for production:
   ```bash
   npm run build
-
+```
 ### Usage
 
 Once the application is running, you can access it at http://localhost:5173. The app will automatically cache the necessary resources for offline access.
-
-### Contributing
-
-We welcome contributions! Please follow these steps to contribute:
-
-Fork the repository.
-Create a new branch (git checkout -b feature/YourFeature).
-Make your changes and commit them (git commit -m 'Add some feature').
-Push to the branch (git push origin feature/YourFeature).
-Create a pull request.
-
-
